@@ -15,7 +15,7 @@ defmodule Demo.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Demo, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: [:phoenix, :cowboy, :logger, :httpoison]]
   end
 
   # Specifies your project dependencies
@@ -23,6 +23,7 @@ defmodule Demo.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [{:phoenix, "0.5.0"},
+     {:httpoison, "~> 0.5"},
      {:cowboy, "~> 1.0"}]
   end
 end

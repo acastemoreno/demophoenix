@@ -8,7 +8,9 @@ defmodule Demo.PageController do
   end
 
   def demo(conn, _params) do
-    render conn, "demo"
+    conn
+    |> put_layout(:none)
+    |> render "demo"
   end
 
   def not_found(conn, _params) do
