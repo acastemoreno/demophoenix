@@ -1,4 +1,5 @@
-<div class="jumbotron">
-  <h2>Welcome to Phoenix!</h2>
-  <p class="lead">Demo</p>
-</div>
+<form action="<%= demo_path(:postdemo) %>" method="post">
+  <input type="hidden" name="_method" value="POST">
+  <input type="file">
+  <input type="submit" value="Subir">
+</form>

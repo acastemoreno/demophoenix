@@ -7,10 +7,14 @@ defmodule Demo.PageController do
     render conn, "index"
   end
 
-  def demo(conn, _params) do
+  def getdemo(conn, _params) do
     conn
-    |> put_layout(:none)
+    |> put_layout("application")
     |> render "demo"
+  end
+
+  def postdemo(conn, _params) do
+    redirect conn, "/"
   end
 
   def not_found(conn, _params) do

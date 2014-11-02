@@ -6,7 +6,8 @@ defmodule Demo.Router do
     pipe_through :browser
 
     get "/", Demo.PageController, :index, as: :index
-    get "/demo", Demo.PageController, :demo, as: :demo
+    get "/demo", Demo.PageController, :getdemo, as: :demo
+    post "/demo", Demo.PageController, :postdemo, as: :demo
   end
 
   # Other scopes may use custom stacks.
