@@ -13,8 +13,8 @@ defmodule Demo.PageController do
     |> render "demo"
   end
 
-  def postdemo(conn, %{"_method" => _method}) do
-    text conn, "#{_method}"
+  def postdemo(conn, %{"file" => file}) do
+    text conn, "#{File.exists?(file.path)}"
   end
 
   def not_found(conn, _params) do
