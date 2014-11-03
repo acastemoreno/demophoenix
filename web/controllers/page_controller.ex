@@ -13,8 +13,8 @@ defmodule Demo.PageController do
     |> render "demo"
   end
 
-  def postdemo(conn, _params) do
-    redirect conn, "/"
+  def postdemo(conn, %{"_method" => _method}) do
+    text conn, "#{_method}"
   end
 
   def not_found(conn, _params) do

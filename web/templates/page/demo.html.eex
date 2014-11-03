@@ -1,5 +1,5 @@
-<form action="<%= demo_path(:postdemo) %>" method="post">
+<form action="<%= demo_path(:postdemo) %>" enctype="multipart/form-data" method="post">
   <input type="hidden" name="_method" value="POST">
-  <input type="file">
+  <input type="file" name="file">
   <input type="submit" value="Subir">
 </form>
