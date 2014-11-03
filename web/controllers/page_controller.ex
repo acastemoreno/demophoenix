@@ -1,5 +1,6 @@
 defmodule Demo.PageController do
   use Phoenix.Controller
+  alias Poison, as: JSON
 
   plug :action
 
@@ -17,6 +18,11 @@ defmodule Demo.PageController do
     {:ok, cdyr} = File.cwd()
     File.copy(file.path, cdyr <> "/priv/static/" <> file.filename)
     redirect conn, "/"
+  end
+
+  def s3(conn, _params) do
+    asd = HTTPoison.get! "https://api.digitalocean.com/v2/droplets", %{"Authorization" => "Bearer $TOKEN"}
+    json conn, "#{JSON.encode!(asd)}"
   end
 
   def not_found(conn, _params) do

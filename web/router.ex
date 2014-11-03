@@ -8,6 +8,7 @@ defmodule Demo.Router do
     get "/", Demo.PageController, :index, as: :index
     get "/demo", Demo.PageController, :getdemo, as: :demo
     post "/demo", Demo.PageController, :postdemo, as: :demo
+    get "/s3", Demo.PageController, :s3, as: :s3
   end
 
   # Other scopes may use custom stacks.
