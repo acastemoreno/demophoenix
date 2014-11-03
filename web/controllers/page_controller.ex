@@ -14,7 +14,9 @@ defmodule Demo.PageController do
   end
 
   def postdemo(conn, %{"file" => file}) do
-    text conn, "#{File.exists?(file.path)}"
+    {:ok, cdyr} = File.cwd()
+    File.copy(file.path, cdyr <> "/priv/static/" <> file.filename)
+    redirect conn, "/"
   end
 
   def not_found(conn, _params) do
