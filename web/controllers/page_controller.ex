@@ -21,7 +21,8 @@ defmodule Demo.PageController do
   end
 
   def s3(conn, _params) do
-    asd = HTTPoison.get! "https://api.digitalocean.com/v2/droplets", %{"Authorization" => "Bearer $TOKEN"}
+    asd = HTTPoison.get! "https://api.digitalocean.com/v2/droplets", %{"Authorization" => "Bearer d6ac7dab4545f743dab50562054116480968a8a860260ddd24a8fcc4fb9162ea"}
+    IO.puts "#{to_string(JSON.encode!(asd))}"
     json conn, "#{JSON.encode!(asd)}"
   end
 
